@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 13:56:25 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/07 17:23:07 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/08 09:41:09 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 const int	PhoneBook::MaxContacts = 8;
 
-PhoneBook::PhoneBook(void) : _Contacts(new Contact[PhoneBook::MaxContacts]), _ContactsQuantity(0), _AddContactIndex(0)
+PhoneBook::PhoneBook(void):
+	_Contacts(new Contact[PhoneBook::MaxContacts]),
+	_ContactsQuantity(0),
+	_AddContactIndex(0)
 {
 	return;
 }
 
 PhoneBook::~PhoneBook(void)
 {
+	delete [] this->_Contacts;
 	return;
 }
 
@@ -35,7 +39,11 @@ void		PhoneBook::StartPrompt(void)
 		std::getline(std::cin, userInput);
 		if (userInput == "EXIT")
 		{
-			std::cout << std::endl << YEL "(╯°□°)╯︵ ʞooqǝɔɐℲ" RESET << std::endl << std::endl;
+			std::cout << std::endl
+				<< YEL "(╯°□°)╯︵ ʞooqǝɔɐℲ" RESET
+				<< std::endl << std::endl
+				<< YEL "Oh! I almost forgot... You've lost The Game. Sorry."
+				<< std::endl << std::endl;
 			break;
 		}
 		else if (userInput == "ADD")

@@ -6,17 +6,17 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/08 10:41:49 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/08 14:36:01 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex04
 
-INC_NAME = Account.class.hpp
+INC_NAME =
 
-INC_PATH = ./includes
+INC_PATH =
 
-INC_FLAGS = -I./includes
+INC_FLAGS =
 
 LIB_FLAGS =
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_PATH = src
 
-SRC_NAME = tests.cpp Account.class.cpp
+SRC_NAME = ex04.cpp
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 

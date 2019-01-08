@@ -6,13 +6,13 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/08 10:41:49 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/08 17:31:12 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = human
 
-INC_NAME = Account.class.hpp
+INC_NAME = Human.hpp Brain.hpp
 
 INC_PATH = ./includes
 
@@ -28,7 +28,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_PATH = src
 
-SRC_NAME = tests.cpp Account.class.cpp
+SRC_NAME = Human.cpp Brain.cpp main.cpp
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 

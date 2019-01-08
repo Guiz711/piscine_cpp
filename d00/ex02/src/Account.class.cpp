@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 18:15:18 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/07 19:35:44 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/08 09:23:47 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,33 @@
 #include <ctime>
 #include "Account.class.hpp"
 
-// int				_accountIndex;
-// int				_amount;
-// int				_nbDeposits;
-// int				_nbWithdrawals;
-
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit):
-	_amount(initial_deposit),
 	_accountIndex(Account::_nbAccounts),
+	_amount(initial_deposit),
 	_nbDeposits(0),
 	_nbWithdrawals(0)
 {
 	Account::_nbAccounts++;
 	Account::_totalAmount += initial_deposit;
 	Account::_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << ";created" << std::endl;
+	std::cout << "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount
+		<< ";created" << std::endl;
 }
 
 Account::~Account(void)
 {
-// index:7;amount:8942;closed
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex
 		<< ";amount:" << this->_amount
 		<< ";closed" << std::endl;
 	return;
 }
-
-/*
-** Non Members
-*/
 
 void	Account::displayAccountsInfos(void)
 {
@@ -91,10 +83,6 @@ int	Account::getNbWithdrawals(void)
 {
 	return Account::_totalNbWithdrawals;
 }
-
-/*
-** Members
-*/
 
 void	Account::displayStatus(void) const
 {
