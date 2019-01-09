@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 18:17:42 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/08 19:22:18 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/09 09:25:18 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Replacer::Replacer(std::string filePath, std::string needle, std::string placeHo
 	_Placeholder(placeHolder),
 	_FilePath(filePath)
 {
-	std::ifstream	ifs(filePath);
+	std::ifstream	ifs(filePath.c_str());
 	std::string		line;
 
 	if (ifs.is_open())
@@ -46,7 +46,7 @@ void	Replacer::ReplaceStringToFile(void) const
 	if(this->_Content.empty())
 		return;
 
-	std::ofstream	ofs(_FilePath + ".replace");
+	std::ofstream	ofs((_FilePath + ".replace").c_str());
 
 	if (ofs.is_open())
 	{
