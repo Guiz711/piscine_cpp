@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 17:20:45 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 11:58:11 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 17:34:37 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ class ClapTrap
 		void	meleeAttack(const std::string& target) const;
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+
+		const std::string&	getName(void) const;
+		const int&			getLvl(void) const;
+		const int&			getHP(void) const;
+		const int&			getMaxHP(void) const;
+		const int&			getEP(void) const;
+		const int&			getMaxEP(void) const;
+		const int&			getMeleeDmg(void) const;
+		const int&			getRangedDmg(void) const;
+		const int&			getArmor(void) const;
 
 	protected:
 		static bool					_RandomInitialized;

@@ -5,31 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 09:32:05 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 17:29:41 by gmichaud         ###   ########.fr       */
+/*   Created: 2019/01/11 19:52:51 by gmichaud          #+#    #+#             */
+/*   Updated: 2019/01/11 19:54:55 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include <iostream>
+#include "AWeapon.hpp"
 
-int		main(void)
+int main(void)
 {
-	FragTrap test("Clappy");
+	AWeapon test("blabla", 2, 5);
+	AWeapon test1 = test;
 
-	test.takeDamage(40);
-	test.rangedAttack("badass");
-	test.takeDamage(25);
-	test.meleeAttack("badass");
-	test.beRepaired(200);
-	test.takeDamage(5000);
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.takeDamage(200);
-	return 0;
+	std::cout << test1.getName() << std::endl;
 }

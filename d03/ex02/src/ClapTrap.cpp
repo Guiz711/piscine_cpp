@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 17:20:38 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 13:05:33 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 20:10:07 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,35 @@ ClapTrap::ClapTrap(std::string name, int maxHP, int maxEp, int meleeDmg, int ran
 }
 
 
-ClapTrap::ClapTrap(const ClapTrap& src)
+ClapTrap::ClapTrap(const ClapTrap& src):
+	_Name(src.getName()),
+	_Lvl(src.getLvl()),
+	_HP(src.getHP()),
+	_MaxHP(src.getMaxHP()),
+	_EP(src.getEP()),
+	_MaxEP(src.getMaxEP()),
+	_MeleeDmg(src.getMeleeDmg()),
+	_RangedDmg(src.getRangedDmg()),
+	_Armor(src.getArmor())
 {
-	*this = src;
-
 	std::cout << "<A lvl " << this->_Lvl << " CL4P-TP named " << this->_Name << " was created.>" << std::endl;
 }
 
-ClapTrap&	ClapTrap::operator=(const ClapTrap& rhs)
+ClapTrap&	ClapTrap::operator=(const ClapTrap& src)
 {
-	if (this != &rhs)
-		*this = rhs;
+	if (this == &src)
+		return *this;
+
+	_Name = src.getName();
+	_Lvl = src.getLvl();
+	_HP = src.getHP();
+	_MaxHP = src.getMaxHP();
+	_EP = src.getEP();
+	_MaxEP = src.getMaxEP();
+	_MeleeDmg = src.getMeleeDmg();
+	_RangedDmg = src.getRangedDmg();
+	_Armor = src.getArmor();
+
 	return *this;
 }
 
@@ -142,3 +160,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		<< " health points, he has now " << this->_HP
 		<< " HP>" << std::endl;
 }
+
+const std::string&	ClapTrap::getName(void) const { return this->_Name; }
+const int&			ClapTrap::getLvl(void) const { return this->_Lvl; };
+const int&			ClapTrap::getHP(void) const { return this->_HP; };
+const int&			ClapTrap::getMaxHP(void) const { return this->_MaxHP; };
+const int&			ClapTrap::getEP(void) const { return this->_EP; };
+const int&			ClapTrap::getMaxEP(void) const { return this->_MaxEP; };
+const int&			ClapTrap::getMeleeDmg(void) const { return this->_MeleeDmg; };
+const int&			ClapTrap::getRangedDmg(void) const { return this->_RangedDmg; };
+const int&			ClapTrap::getArmor(void) const { return this->_Armor; };

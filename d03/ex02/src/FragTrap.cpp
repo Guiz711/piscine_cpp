@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 09:16:41 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 13:05:39 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 20:10:46 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,21 @@ FragTrap::FragTrap(const FragTrap& src):
 	this->introductionDialog();
 }
 
-FragTrap&	FragTrap::operator=(const FragTrap& rhs)
+FragTrap&	FragTrap::operator=(const FragTrap& src)
 {
-	if (this != &rhs)
-		*this = rhs;
+	if (this == &src)
+		return *this;
+
+	_Name = src.getName();
+	_Lvl = src.getLvl();
+	_HP = src.getHP();
+	_MaxHP = src.getMaxHP();
+	_EP = src.getEP();
+	_MaxEP = src.getMaxEP();
+	_MeleeDmg = src.getMeleeDmg();
+	_RangedDmg = src.getRangedDmg();
+	_Armor = src.getArmor();
+
 	return *this;
 }
 

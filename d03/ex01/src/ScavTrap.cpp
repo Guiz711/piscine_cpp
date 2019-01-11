@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 09:16:41 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 13:04:41 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 20:09:27 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,35 @@ ScavTrap::ScavTrap(std::string name):
 	this->introductionDialog();
 }
 
-ScavTrap::ScavTrap(const ScavTrap& src)
+ScavTrap::ScavTrap(const ScavTrap& src):
+	_Name(src.getName()),
+	_Lvl(src.getLvl()),
+	_HP(src.getHP()),
+	_MaxHP(src.getMaxHP()),
+	_EP(src.getEP()),
+	_MaxEP(src.getMaxEP()),
+	_MeleeDmg(src.getMeleeDmg()),
+	_RangedDmg(src.getRangedDmg()),
+	_Armor(src.getArmor())
 {
-	*this = src;
-
 	this->introductionDialog();
 }
 
-ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
+ScavTrap&	ScavTrap::operator=(const ScavTrap& src)
 {
-	if (this != &rhs)
-		*this = rhs;
+	if (this == &src)
+		return *this;
+
+	_Name = src.getName();
+	_Lvl = src.getLvl();
+	_HP = src.getHP();
+	_MaxHP = src.getMaxHP();
+	_EP = src.getEP();
+	_MaxEP = src.getMaxEP();
+	_MeleeDmg = src.getMeleeDmg();
+	_RangedDmg = src.getRangedDmg();
+	_Armor = src.getArmor();
+
 	return *this;
 }
 
@@ -163,8 +181,18 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 	}
 }
 
+const std::string&	ScavTrap::getName(void) const { return this->_Name; }
+const int&			ScavTrap::getLvl(void) const { return this->_Lvl; };
+const int&			ScavTrap::getHP(void) const { return this->_HP; };
+const int&			ScavTrap::getMaxHP(void) const { return this->_MaxHP; };
+const int&			ScavTrap::getEP(void) const { return this->_EP; };
+const int&			ScavTrap::getMaxEP(void) const { return this->_MaxEP; };
+const int&			ScavTrap::getMeleeDmg(void) const { return this->_MeleeDmg; };
+const int&			ScavTrap::getRangedDmg(void) const { return this->_RangedDmg; };
+const int&			ScavTrap::getArmor(void) const { return this->_Armor; };
+
 /*
-** Protected member functions
+** Private member functions
 */
 
 void	ScavTrap::introductionDialog(void) const

@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 09:16:41 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 13:04:19 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 20:08:49 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,20 +96,38 @@ FragTrap::FragTrap(std::string name):
 		<< std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& src)
+FragTrap::FragTrap(const FragTrap& src):
+	_Name(src.getName()),
+	_Lvl(src.getLvl()),
+	_HP(src.getHP()),
+	_MaxHP(src.getMaxHP()),
+	_EP(src.getEP()),
+	_MaxEP(src.getMaxEP()),
+	_MeleeDmg(src.getMeleeDmg()),
+	_RangedDmg(src.getRangedDmg()),
+	_Armor(src.getArmor())
 {
-	*this = src;
-
 	std::cout << "<A lvl " << this->_Lvl << " FR4G-TP was created.>" << std::endl
 		<< "<" << this->_Name << "> "
 		<< FragTrap::_StartDialog[rand() % START_DIALOG_LEN]
 		<< std::endl;
 }
 
-FragTrap&	FragTrap::operator=(const FragTrap& rhs)
+FragTrap&	FragTrap::operator=(const FragTrap& src)
 {
-	if (this != &rhs)
-		*this = rhs;
+	if (this == &src)
+		return *this;
+
+	_Name = src.getName();
+	_Lvl = src.getLvl();
+	_HP = src.getHP();
+	_MaxHP = src.getMaxHP();
+	_EP = src.getEP();
+	_MaxEP = src.getMaxEP();
+	_MeleeDmg = src.getMeleeDmg();
+	_RangedDmg = src.getRangedDmg();
+	_Armor = src.getArmor();
+
 	return *this;
 }
 
@@ -189,6 +207,16 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 			<< " doesn't have enough energy points left...>" << std::endl;
 	}
 }
+
+const std::string&	FragTrap::getName(void) const { return this->_Name; }
+const int&			FragTrap::getLvl(void) const { return this->_Lvl; };
+const int&			FragTrap::getHP(void) const { return this->_HP; };
+const int&			FragTrap::getMaxHP(void) const { return this->_MaxHP; };
+const int&			FragTrap::getEP(void) const { return this->_EP; };
+const int&			FragTrap::getMaxEP(void) const { return this->_MaxEP; };
+const int&			FragTrap::getMeleeDmg(void) const { return this->_MeleeDmg; };
+const int&			FragTrap::getRangedDmg(void) const { return this->_RangedDmg; };
+const int&			FragTrap::getArmor(void) const { return this->_Armor; };
 
 /*
 ** Private member functions

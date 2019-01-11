@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 09:02:38 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 11:13:26 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 17:30:10 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,16 @@ class FragTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		void	vaulthunter_dot_exe(std::string const & target);
+
+		const std::string&	getName(void) const;
+		const int&			getLvl(void) const;
+		const int&			getHP(void) const;
+		const int&			getMaxHP(void) const;
+		const int&			getEP(void) const;
+		const int&			getMaxEP(void) const;
+		const int&			getMeleeDmg(void) const;
+		const int&			getRangedDmg(void) const;
+		const int&			getArmor(void) const;
 
 	private:
 		static const char			*_StartDialog[];

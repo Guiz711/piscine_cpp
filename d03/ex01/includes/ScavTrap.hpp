@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:42:34 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/10 16:57:27 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/11 17:31:33 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ class ScavTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		void	challengeNewcomer(std::string const & target);
+
+		const std::string&	getName(void) const;
+		const int&			getLvl(void) const;
+		const int&			getHP(void) const;
+		const int&			getMaxHP(void) const;
+		const int&			getEP(void) const;
+		const int&			getMaxEP(void) const;
+		const int&			getMeleeDmg(void) const;
+		const int&			getRangedDmg(void) const;
+		const int&			getArmor(void) const;
 
 	protected:
 		static const char			*_StartDialog[];

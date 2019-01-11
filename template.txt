@@ -14,3 +14,15 @@ class Template
 };
 
 #endif
+
+
+
+
+
+/*
+** Constructors and destructor
+*/
+
+/*
+** Public member functions
+*/

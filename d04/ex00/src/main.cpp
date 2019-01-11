@@ -5,31 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 09:32:05 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/11 17:29:41 by gmichaud         ###   ########.fr       */
+/*   Created: 2019/01/11 15:36:46 by gmichaud          #+#    #+#             */
+/*   Updated: 2019/01/11 17:58:18 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "Sorcerer.hpp"
+#include "Victim.hpp"
+#include "Peon.hpp"
+#include "Villager.hpp"
+#include "Sailor.hpp"
 
-int		main(void)
+int main()
 {
-	FragTrap test("Clappy");
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	Villager franck("Franck");
+	Sailor jack("Jack");
 
-	test.takeDamage(40);
-	test.rangedAttack("badass");
-	test.takeDamage(25);
-	test.meleeAttack("badass");
-	test.beRepaired(200);
-	test.takeDamage(5000);
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.vaulthunter_dot_exe("badass");
-	test.takeDamage(200);
+	std::cout << robert << jim << joe << franck << jack;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+	robert.polymorph(franck);
+	robert.polymorph(jack);
+
 	return 0;
 }
