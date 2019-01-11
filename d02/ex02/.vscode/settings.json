@@ -1,0 +1,15 @@
+{
+	"files.associations": {
+		"bitset": "cpp",
+		"ios": "cpp",
+		"locale": "cpp",
+		"__locale": "cpp",
+		"istream": "cpp",
+		"iterator": "cpp",
+		"ostream": "cpp",
+		"streambuf": "cpp",
+		"string": "cpp",
+		"iostream": "cpp",
+		"algorithm": "cpp"
+	}
+}

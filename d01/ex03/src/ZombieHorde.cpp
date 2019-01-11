@@ -6,21 +6,11 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 13:09:01 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/08 14:08:18 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/09 18:39:42 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
-
-// public:
-// 	ZombieHorde(int N);
-// 	~ZombieHorde(void);
-
-// 	void	announce(void);
-
-// private:
-// 	static ZombieEvent	_Events[];
-// 	Zombie				*_Horde;
 
 const std::string ZombieHorde::_RandomNames[] = {
 	"Bob",
